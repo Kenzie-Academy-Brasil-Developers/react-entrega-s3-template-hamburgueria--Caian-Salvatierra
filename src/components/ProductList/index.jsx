@@ -1,11 +1,15 @@
 import { ProductCard } from "./ProductCard";
 
 export const ProductList = ({ productList }) => {
-   return (
-      <ul>
-         {productList.map((product) => (
+  return (
+    <section>
+      <div className="container">
+        <ul>
+          {productList.map((product) => (
             <ProductCard key={product.id} product={product} />
-         ))}
-      </ul>
-   );
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
 };

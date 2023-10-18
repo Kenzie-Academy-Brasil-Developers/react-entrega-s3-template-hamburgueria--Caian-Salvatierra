@@ -1,15 +1,17 @@
 import { useState } from "react";
-import Logo from "../../assets/Logo.svg";
+import Logo from "../../assets/MaskGroup.png";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
+import style from "./style.module.scss";
 
-export const Header = () => {
+export const Header = ({setVisible}) => {
    const [value, setValue] = useState("");
 
    return (
-      <header>
+      <header className={style.header}>
+         <div  className="container">
+         <div className={style.box}>
          <img src={Logo} alt="Logo Kenzie Burguer" />
-         <div>
-            <button>
+            <button onClick={() => setVisible(true)}>
                 <MdShoppingCart size={21} />
                 <span>0</span>
             </button>
@@ -23,6 +25,7 @@ export const Header = () => {
                  <MdSearch size={21} />
                </button>
             </form>
+         </div>
          </div>
       </header>
    );

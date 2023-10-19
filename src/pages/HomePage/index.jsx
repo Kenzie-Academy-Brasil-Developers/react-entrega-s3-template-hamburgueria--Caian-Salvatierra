@@ -35,7 +35,8 @@ export const HomePage = ({setVisible}) => {
      
          <Header setVisible= {setVisible}/>
          <main>
-            <ProductList productList={productList} />
+            <ProductList 
+            productList={productList} />
             
          </main>
       </>

@@ -1,13 +1,15 @@
 import { MdDelete } from "react-icons/md";
 
-export const CartItemCard = ({ product }) => {
+export const CartItemCard = ({ product,removeCart }) => {
+   const {id , img , name} = product;
+   
    return (
       <li>
          <div>
-            <img src={product.img} alt={product.name} />
-            <h3>{product.name}</h3>
+            <img src={img} alt={name} />
+            <h3>{name}</h3>
          </div>
-         <button aria-label="delete" title="Remover item">
+         <button onClick={() => removeCart(id)} aria-label="delete" title="Remover item">
             <MdDelete size={21} />
          </button>
       </li>

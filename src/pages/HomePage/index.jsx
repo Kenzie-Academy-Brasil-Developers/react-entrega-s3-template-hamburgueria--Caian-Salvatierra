@@ -3,9 +3,10 @@ import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import {apiProducts} from "../../services/api";
 
-export const HomePage = ({setVisible}) => {
+export const HomePage = ({setVisible, addCart}) => {
+   
    const [productList, setProductList] = useState([]);
-  
+   
   useEffect(() =>{
    const getProdutc = async () => {
       try {
@@ -18,25 +19,16 @@ export const HomePage = ({setVisible}) => {
    };
    getProdutc();
   }, []);
-
-   // useEffect montagem - carrega os produtos da API e joga em productList
-
-
-
-   // useEffect atualização - salva os produtos no localStorage (carregar no estado)
-    
-   // adição, exclusão, e exclusão geral do carrinho
-   // renderizações condições e o estado para exibir ou não o carrinho
-   // filtro de busca
-   // estilizar tudo com sass de forma responsiva
-
+   
    return (
       <>
      
          <Header setVisible= {setVisible}/>
          <main>
             <ProductList 
-            productList={productList} />
+            productList={productList} 
+            addCart={addCart}
+            />
             
          </main>
       </>

@@ -34,7 +34,14 @@
 
     &.body-600{
         font-weight: 600;
-    }
+        
+        &.body-600-1{
+            color: var(--grey-4);
+        }
+        &.body-600-2{
+            color: var(--grey-3);
+        }
+    } 
 }
 
 .caption{

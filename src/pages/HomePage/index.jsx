@@ -3,7 +3,7 @@ import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import {apiProducts} from "../../services/api";
 
-export const HomePage = ({setVisible, addCart}) => {
+export const HomePage = ({setVisible, setCurrentProduct, addCart}) => {
    
    const [productList, setProductList] = useState([]);
    
@@ -27,7 +27,8 @@ export const HomePage = ({setVisible, addCart}) => {
          <main>
             <ProductList 
             productList={productList} 
-            addCart={addCart}
+            setCurrentProduct= {setCurrentProduct}
+            addCart= {addCart}
             />
             
          </main>

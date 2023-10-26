@@ -1,7 +1,7 @@
 import "./styles/index.scss";
 import { HomePage } from "./pages/HomePage";
 import { useState } from "react";
-import { CartModal } from "./components/CartModal";
+import { CartModal } from "./components/modal/CartModal";
 import { ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from "react";
@@ -13,7 +13,8 @@ function App() {
   const [cartList, setCartList] = useState(
     localCartList ? JSON.parse(localCartList) : []
   ); 
-
+  
+    // const [currentProduct, setCurrentProduct] = useState(null);
 
     const addCart = (prodForAdd) => {
       const hasCart = cartList.some(

@@ -1,7 +1,7 @@
 import { ProductCard } from "./ProductCard";
 import style from "./style.module.scss";
 
-export const ProductList = ({ productList, cartList , addCart }) => {
+export const ProductList = ({ productList, addCart }) => {
   return (
     <section>
       <div className="container">

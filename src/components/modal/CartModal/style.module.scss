@@ -2,6 +2,7 @@
     position: fixed;
     width: 100%;
     height: 100vh;
+    margin: 0 auto;
     inset: 0;
     display: flex;
     align-items: center;
@@ -11,23 +12,22 @@
 }
 
 .boxModal {
-  width: 24.8125rem;
-  margin: 0 auto;
-  padding: 0.9375rem 0.875rem;
+  width: 30.25rem;
+
   border-radius: 8px;
   background: var(--grey-1);
-
-  border: 2px solid red;
 
   display: flex;
   flex-direction: column;
 }
 
 .headerModal {
+  
   display: flex;
   justify-content: space-between;
   padding: 0.875rem 0.875rem;
   margin-bottom: 0.875rem;
+  border-radius: 8px 8px 0px 0px;
   background: var(--color-primary);
   
 
@@ -38,17 +38,27 @@
   button{
     background: transparent;
     color: var(--button-default);
-    cursor: pointer;
   }
+}
+
+.productModal{
+  // border: 2px solid ;
+  padding: 0.9375rem 0.875rem;
 }
 
 .row{
   border: 1px solid var(--grey-2) ;
-  margin-bottom: 0.9375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
 .boxPrice{
+  padding: 0.9375rem 0.875rem; 
+}
+
+.boxContainer{
   display: flex;
   align-items: center;
   justify-content: space-between;

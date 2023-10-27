@@ -1,6 +1,6 @@
 import style from "./style.module.scss";
 
-export const ProductCard = ({ product, addCart, cartList }) => {
+export const ProductCard = ({ product, addCart }) => {
     return(
         <div className="container">
         <li className={style.cardList}>

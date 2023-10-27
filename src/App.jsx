@@ -13,6 +13,7 @@ function App() {
   const [cartList, setCartList] = useState(
     localCartList ? JSON.parse(localCartList) : []
   ); 
+  const [count, setCount] =  useState(0);
   
     // const [currentProduct, setCurrentProduct] = useState(null);
 
@@ -22,6 +23,7 @@ function App() {
       );
 
         if(!hasCart){
+          setCount((count) => count +1)
           setCartList([...cartList, prodForAdd]);
           toast.success("Adicionado ao Carrinho");
         } else{
@@ -33,8 +35,14 @@ function App() {
 
     const removeCart = (productId) => {
       const newCart = cartList.filter((cart) => cart.id !== productId);
-      setCartList(newCart);
+      setCartList(newCart)
+      setCount((count) => count -1)
       toast.success("Item removido com sucesso!");
+    };
+
+    const removeAll = () => {
+      setCartList([])
+      setCount(0)
     };
 
     useEffect(() => { 
@@ -45,7 +53,9 @@ function App() {
     <>
       <HomePage 
       addCart={addCart}
-      setVisible={setVisible} />
+      setVisible={setVisible} 
+      count={count}
+      />
       
       {isVisible ? (
       <CartModal 
@@ -53,11 +63,13 @@ function App() {
       cartList={cartList}
       addCart={addCart}
       removeCart= {removeCart}
+      removeAll= {removeAll}
       /> 
       ) : null}
       < ToastContainer position="top-right"  autoClose={2* 1000}/> 
     </>
   );
 };
+
 
 export default App

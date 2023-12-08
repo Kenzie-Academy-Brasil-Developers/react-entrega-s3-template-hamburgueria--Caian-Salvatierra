@@ -3,7 +3,7 @@ import style from "./style.module.scss";
 export const ProductCard = ({ product, addCart }) => {
     return(
         <div className="container">
-        <li onClick={(product) => `${style.cardList}`}>
+        <li className={style.cardList}>
             <img src={product.img} alt={product.name} />
             <div className={style.boxCard}>
                 <h3 className="title third">{product.name}</h3>

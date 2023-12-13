@@ -15,7 +15,7 @@ function App() {
   ); 
   const [count, setCount] =  useState(0);
   
-    // const [currentProduct, setCurrentProduct] = useState(null);
+    
 
     const addCart = (prodForAdd) => {
       const hasCart = cartList.some(
@@ -47,7 +47,10 @@ function App() {
 
     useEffect(() => { 
       localStorage.setItem("@CARTLIST",JSON.stringify(cartList))
+        const reading = localStorage.getItem("@CARTLIST");
+          setCount((JSON.parse(reading)).length);
     } , [cartList]);
+
 
   return (
     <>
